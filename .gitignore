@@ -1,0 +1,5 @@
+./app/.cache
+./app/.tmp
+./app/build
+./app/node_modules
+./app/.strapi-updater.json
