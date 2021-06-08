@@ -14,11 +14,12 @@ This is a quickstart repository you can fork to deploy Strapi to Kubernetes on A
 1. Strapi instance deployed through Porter connects to PostgresDB. [Deploy a PostgresDB instance to your cluster in one click](https://docs.getporter.dev/docs/postgresdb).
 2. After the database has been deployed, navigate to the **Environment Variables** tab of your deployed Strapi instance. Configure the following environment variables:
 ```
-DATABASE_HOST
-DATABASE_PORT 
-DATABASE_NAME
-DATABASE_USERNAME
-DATABASE_PASSWORD
+NODE_ENV=production
+DATABASE_HOST=
+DATABASE_PORT=5432
+DATABASE_NAME=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
 ```
 For details on how to connect to the deployed database, [see this guide](https://docs.getporter.dev/docs/postgresdb#connecting-to-the-database).
 
