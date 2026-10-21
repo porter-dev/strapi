@@ -42,12 +42,12 @@ Strapi refuses to start without its secrets. Create an environment group holding
 
 ```bash
 porter env create --name strapi-secrets \
-  -s APP_KEYS="$(openssl rand -base64 32),$(openssl rand -base64 32)" \
-  -s API_TOKEN_SALT="$(openssl rand -base64 32)" \
-  -s ADMIN_JWT_SECRET="$(openssl rand -base64 32)" \
-  -s TRANSFER_TOKEN_SALT="$(openssl rand -base64 32)" \
-  -s JWT_SECRET="$(openssl rand -base64 32)" \
-  -s ENCRYPTION_KEY="$(openssl rand -base64 32)"
+  -s APP_KEYS="$(openssl rand -hex 32),$(openssl rand -hex 32)" \
+  -s API_TOKEN_SALT="$(openssl rand -hex 32)" \
+  -s ADMIN_JWT_SECRET="$(openssl rand -hex 32)" \
+  -s TRANSFER_TOKEN_SALT="$(openssl rand -hex 32)" \
+  -s JWT_SECRET="$(openssl rand -hex 32)" \
+  -s ENCRYPTION_KEY="$(openssl rand -hex 32)"
 ```
 
 You can also create it from the **Env Groups** tab in the dashboard.
@@ -83,7 +83,7 @@ Database migrations run automatically when Strapi starts. Uploaded media is stor
 
 `porter.yaml` defines a single `web` service that runs `npm run start` on port `1337` with 1 CPU and 2048 MB of RAM, which leaves headroom for the admin panel. The health check probes `/_health`. See the [porter.yaml reference](https://docs.porter.run/applications/configuration-as-code/reference) for every field.
 
-Generate each secret with `openssl rand -base64 32`.
+Generate each secret with `openssl rand -hex 32`.
 
 | Name | Required | Description |
 | --- | --- | --- |

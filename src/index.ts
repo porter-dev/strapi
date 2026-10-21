@@ -14,7 +14,7 @@ export default {
     if (missing.length > 0) {
       throw new Error(
         `Missing required environment variables: ${missing.join(', ')}. ` +
-          'Generate each value with: openssl rand -base64 32'
+          'Generate each value with: openssl rand -hex 32'
       );
     }
   },
