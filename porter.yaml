@@ -1,0 +1,16 @@
+version: v2
+name: strapi
+build:
+  method: docker
+  context: .
+  dockerfile: ./Dockerfile
+services:
+  - name: web
+    type: web
+    run: npm run start
+    port: 1337
+    cpuCores: 1
+    ramMegabytes: 2048
+    healthCheck:
+      enabled: true
+      httpPath: /_health
