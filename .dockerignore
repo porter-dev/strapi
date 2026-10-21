@@ -1,0 +1,16 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+dist
+build
+.cache
+.strapi
+.tmp
+public/uploads/*
+!public/uploads/.gitkeep
+Dockerfile
+.dockerignore
+docker-compose.yml
+README.md
